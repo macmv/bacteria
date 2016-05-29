@@ -17,9 +17,9 @@
         document.getElementById("demo").innerHTML = xhttp.responseText;
       }
     };
-    var json = {}
-    xhttp.open("GET", "http://192.168.0.4/join", true);
-    xhttp.send();
+    var json = {"session": 100, "nickname": "test", "skin": "red"};
+    xhttp.open("POST", "http://192.168.0.4/join", true);
+    xhttp.send(JSON.parse(json));
   }
   </script>
 
