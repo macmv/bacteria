@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+  <h2>BACTERIA</h2>
+
+  <button type="button" onclick="loadDoc()">Request data</button>
+
+  <p id="demo"></p>
+
+
+  <script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        document.getElementById("demo").innerHTML = xhttp.responseText;
+      }
+    };
+    var json = {}
+    xhttp.open("GET", "http://192.168.0.4/join", true);
+    xhttp.send();
+  }
+  </script>
+
+  </body>
+</html>
